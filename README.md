@@ -26,3 +26,9 @@ tensorflow-2.1.1-styles   latest              a1315b187530        18 minutes ago
 tensorflow/tensorflow     2.1.1               684ce605b42e        13 days ago         2.04GB
 ...
 ```
+
+After this, you can launch an interactive session with:
+
+```
+# docker run -u 1000:1000 --rm -it -v /host-dir:/tf-tryout:z -w /tf-tryout tensorflow-2.1.1-styles:latest
+```

@@ -32,3 +32,31 @@ After this, you can launch an interactive session with:
 ```
 # docker run -u 1000:1000 --rm -it -v /host-dir:/tf-tryout:z -w /tf-tryout tensorflow-2.1.1-styles:latest
 ```
+
+For most parts, the code just works. I was not interested in image display, so I just skip all the plotting code. I had opened a pull
+https://github.com/tensorflow/docs/pull/1592 for a small code improvement.
+
+My outcome after 100 steps:
+
+```
+Train step: 100
+Total time: 1202.7
+```
+
+![my run](images/stylized-image-100.png)
+
+Theirs first half of 1000 steps:
+
+```
+Train step: 1000
+Total time: 22.3
+```
+
+A whole line of dots comes out for them, every 2 seconds. So obviously, they never noticed the progress bar does not work.
+
+My hardware is about 540x slower (without GPU acceleration). For me, it is 20 minutes. So without my fix, I could be staring
+at the screen for 20 minutes wondering what's going on. And I did, twice, interrupting the run, thinking it has gone wrong!
+
+Here is the reference outcome:
+
+![the official tutorial reference](images/stylized-image.png)

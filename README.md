@@ -74,3 +74,37 @@ WARNING! This will remove all dangling images.
 Are you sure you want to continue? [y/N] y
 Total reclaimed space: 0B
 ```
+
+```
+# docker image rm tensorflow/tensorflow:2.1.1
+Error response from daemon: conflict: unable to remove repository reference "tensorflow/tensorflow:2.1.1" (must force) - container ecb4925f1eb8 is using its referenced image 684ce605b42e
+```
+
+```
+# docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED       STATUS                   PORTS     NAMES
+ecb4925f1eb8   684ce605b42e   "/bin/sh -c 'apt-get…"   2 years ago   Exited (1) 2 years ago             strange_lewin
+
+# docker ps -a -q
+ecb4925f1eb8
+
+# docker rm ecb4925f1eb8
+ecb4925f1eb8
+# docker ps -a -q
+
+# docker image rm tensorflow/tensorflow:2.1.1
+Untagged: tensorflow/tensorflow:2.1.1
+Untagged: tensorflow/tensorflow@sha256:2904f332656af61c76145523676f8431dd32f64800b4211a97bc7b7d0176a8db
+Deleted: sha256:684ce605b42e5a72b0152fa50757c01ce2f9dd107c7b215a85d75af9f95ad558
+Deleted: sha256:3b9c932dbd4b3417fef2d1405c10e0ee3796e9263442949267a6dd33811529fd
+Deleted: sha256:5548aeae48816e0133bf8941612abf3896171af86f1133e8d62489d24b9dcb07
+Deleted: sha256:d897e8e6ba8ce25cb446c55d33f43333dfd25d6c580c6a434fafcb43d69f129f
+Deleted: sha256:ee48be82dbbd0ca547f95c9e22069995ac84813b13fa5b907ee382324602e676
+Deleted: sha256:267d379cabfb0e8740baab20ceea639e3ab763266227ecb6c513f9c46a752654
+Deleted: sha256:e857acd09a4246a35dceef02e730876a388e4156ca938ae6898c10d96dda4e6b
+Deleted: sha256:1ca0178eeed1b7e7db63418c19be386cdaef9e0e500dbfce22422259f2dc8762
+Deleted: sha256:82751c4dcc36265daceeee0abd938806b591eb66700863186377348c96e8aead
+Deleted: sha256:24b16cac34768092d57cdb429a12de6c9ee870a3724d70098a189ae0ac344c42
+Deleted: sha256:b1daff3b271fede2bec31812c398e28952f792935f608e467271cdfaccab7de2
+Deleted: sha256:b7f7d2967507ba709dbd1dd0426a5b0cdbe1ff936c131f8958c8d0f910eea19e
+```

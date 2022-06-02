@@ -60,3 +60,10 @@ at the screen for 20 minutes wondering what's going on. And I did, twice, interr
 Here is the reference outcome:
 
 ![the official tutorial reference](images/stylized-image.png)
+
+```
+# docker image rm tensorflow-2.1.1-styles:latest
+Untagged: tensorflow-2.1.1-styles:latest
+Deleted: sha256:a1315b18753062561d1185e19b4f78be139c3d83b8c9d2ea31617398be4ecb86
+Deleted: sha256:a919d216ca6b50a5393187e5f1b96b2d68ffb8327f1b75aa2d1c96225dfad8b4
+```
